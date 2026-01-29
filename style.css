@@ -954,7 +954,7 @@ section {
 /* Update für die Status-Box */
 .animation-status-box {
     position: absolute;
-    margin-bottom: 0px;
+    margin-bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
