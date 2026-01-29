@@ -931,7 +931,7 @@ section {
 .outline-glyph {
     position: absolute;
         margin-top: -350px;
-            margin-bottom: -350px;
+            margin-bottom: -150px;
     font-family: 'circumplex', sans-serif;
     line-height: 1;
     font-size: 160vh;
