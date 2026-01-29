@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMOTIONAL FORM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav class="fixed-nav">
+        <a href="assets/downloads/EMOTIONALFORM_Thesis.pdf" download class="nav-btn">
+            <span>↓ THESIS (PDF)</span>
+        </a>
+        <a href="assets/downloads/circumplexeVF.ttf" download class="nav-btn">
+            <span>↓ FONT (TRIAL)</span>
+        </a>
+    </nav>
+
+    <div id="cursor-tracker"></div>
+
+    <div class="fixed-overlay">
+        <div class="axis-line x-axis"></div>
+        <div class="axis-line y-axis"></div>
+    </div>
+
+    <p class="title">EMOTIONAL FORM</p>
+
+    <section id="hero-section">
+        <div id="hero-text" contenteditable="true">circumplex</div>
+    </section>
+
+    <section id="tester-section">
+        <div class="tester-toolbar">
+            <div class="toolbar-group center">
+                <div class="slider-box">
+                    <label>arou</label>
+                    <input type="range" id="axis-x" min="0" max="100" value="50">
+                </div>
+                <div class="slider-box">
+                    <label>valz</label>
+                    <input type="range" id="axis-y" min="0" max="100" value="50">
+                </div>
+            </div>
+
+            <div class="toolbar-group right">
+                <div class="text-size-controls no-margin">
+                    <button id="btn-decrease" title="Kleiner">−</button>
+                    <span id="size-display">124px</span> 
+                    <button id="btn-increase" title="Größer">+</button>
+                </div>
+            </div>
+        </div>
+        
+        <textarea id="tester-text" rows="3">quilt frenzy jackdaw gave them the best box that i had ever heard hier muss noch ne extra zeile hin</textarea>
+    </section>
+
+    <section id="circumplex-tester-section">
+        <div class="circumplex-map">
+            <div class="axis-line axis-vertical"></div>
+            <div class="axis-line axis-horizontal"></div>
+            <span class="label-top">HIGH AROUSAL</span>
+            <span class="label-bottom">LOW AROUSAL</span>
+            <span class="label-left">NEGATIVE</span>
+            <span class="label-right">POSITIVE</span>
+
+            <div class="type-point point-top">
+                <div class="font-preview" contenteditable="true" spellcheck="false" style="font-variation-settings: 'AROU' 100, 'VALZ' 50;">aufgeregt</div>
+            </div>
+            <div class="type-point point-bottom">
+                <div class="font-preview" contenteditable="true" spellcheck="false" style="font-variation-settings: 'AROU' 0, 'VALZ' 50;">beruhigt</div>
+            </div>
+            <div class="type-point point-right">
+                <div class="font-preview" contenteditable="true" spellcheck="false" style="font-variation-settings: 'AROU' 50, 'VALZ' 100;">positiv</div>
+            </div>
+            <div class="type-point point-left">
+                <div class="font-preview" contenteditable="true" spellcheck="false" style="font-variation-settings: 'AROU' 50, 'VALZ' 0;">negativ</div>
+            </div>
+            <div class="type-point point-center">
+                <div class="font-preview" contenteditable="true" spellcheck="false" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">neutral</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chat-section">
+        <div class="section-label-bar">
+            <span class="label-text">ANWENDUNGSBEISPIELs 1: DIGITALE CHAT KOMMUNIKATION</span>
+            <span class="label-text">KONTEXT: CHEFFCHEN CHAT</span>
+        </div>
+
+        <div class="chat-window">
+            <div class="chat-top-bar">
+                <div class="contact-info">
+                    <span class="status-dot"></span>
+                    <span>CHEFFCHEN</span>
+                </div>
+                <span class="timestamp">ZULETZT ONLINE: JETZT</span>
+            </div>
+
+            <div class="chat-feed">
+                <div class="chat-row received">
+                    <div class="bubble-meta">CHEFFCHEN</div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">
+                        hey, bist du schon im wochenende?
+                    </div>
+                </div>
+
+                <div class="chat-row sent">
+                    <div class="bubble-meta">
+                        <span class="subtext-label">SUBTEXT: VERDACHT</span>
+                        DU
+                    </div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 60, 'VALZ' 40;">
+                        noch nicht ganz. warum?
+                    </div>
+                </div>
+
+                <div class="chat-row received">
+                    <div class="bubble-meta">CHEFFCHEN</div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 30, 'VALZ' 60;">
+                        der kunde will das layout komplett anders. brauchen das bis morgen früh.
+                    </div>
+                </div>
+
+                <div class="chat-row sent">
+                    <div class="bubble-meta">
+                        <span class="subtext-label">SUBTEXT: UNGLAUBE</span>
+                        DU
+                    </div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 90, 'VALZ' 10;">
+                        ernsthaft?
+                    </div>
+                </div>
+
+                <div class="chat-row received">
+                    <div class="bubble-meta">CHEFFCHEN</div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 20, 'VALZ' 80;">
+                        ist nur eine "kleine" sache. dauert max 1 stunde!
+                    </div>
+                </div>
+
+                <div class="chat-row sent">
+                    <div class="bubble-meta">
+                        <span class="subtext-label">SUBTEXT: ZORN (100%)</span>
+                        DU
+                    </div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 100, 'VALZ' 0;">
+                        alles klar. ich setz mich dran.
+                    </div>
+                </div>
+
+                <div class="chat-row received">
+                    <div class="bubble-meta">CHEFFCHEN</div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">
+                        super danke! du bist ein lebensretter.
+                    </div>
+                </div>
+
+                <div class="chat-row sent">
+                    <div class="bubble-meta">
+                        <span class="subtext-label">SUBTEXT: INNERLICH TOT</span>
+                        DU
+                    </div>
+                    <div class="chat-bubble" style="font-variation-settings: 'AROU' 10, 'VALZ' 0;">
+                        gerne. :)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenplay-section">
+        
+        <div class="section-label-bar">
+            <span class="label-text">ANWENDUNGSBEISPIEL 2: FILM SCRIPT</span>
+            <span class="label-text">KONTEXT: FLEABAG (S02E05)</span>
+        </div>
+
+        <div class="audio-controls-floating">
+            <button id="btn-play-audio" class="audio-btn">▶ LIVE SCRIPT ABSPIELEN</button>
+            <audio id="audio-file" src="assets/audio/claireitsfrench.mp3"></audio>
+        </div>
+
+       <div class="script-page">
+        
+        <div class="slugline">EXT. PARK - DAY</div>
+        
+        <div class="action-line">
+            CLAIRE sits on a park bench, crying. Her new bob haircut is a disaster.
+            FLEABAG stands in front of her.
+        </div>
+
+        <div class="script-block" data-arou="75" data-valz="20">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(desperate)</div>
+            <div class="dialogue">Tell the truth.</div>
+        </div>
+
+        <div class="script-block" data-arou="16" data-valz="50">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(whispering)</div>
+            <div class="dialogue">It's horrendous.</div>
+        </div>
+
+        <div class="script-block" data-arou="90" data-valz="0">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(hysterical)</div>
+            <div class="dialogue">It's horrendous!</div>
+        </div>
+
+        <div class="script-block" data-arou="30" data-valz="70">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(lying, soothing)</div>
+            <div class="dialogue">It's modern.</div>
+        </div>
+
+        <div class="script-block" data-arou="100" data-valz="10">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(snapping)</div>
+            <div class="dialogue">Don't lie!</div>
+        </div>
+
+        <div class="script-block" data-arou="20" data-valz="60">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(defensive)</div>
+            <div class="dialogue">I'm not.</div>
+        </div>
+
+        <div class="script-block" data-arou="60" data-valz="0">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(realisation)</div>
+            <div class="dialogue">I look like a pencil!</div>
+        </div>
+
+        <div class="script-block" data-arou="60" data-valz="74">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(stifling a laugh)</div>
+            <div class="dialogue">You... you don't look like...</div>
+        </div>
+
+        <div class="script-block" data-arou="100" data-valz="5">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(furious)</div>
+            <div class="dialogue">Don't laugh!</div>
+        </div>
+
+        <div class="script-block" data-arou="40" data-valz="60">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(placating)</div>
+            <div class="dialogue">It's okay!</div>
+        </div>
+
+        <div class="script-block" data-arou="91" data-valz="0">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(sobbing)</div>
+            <div class="dialogue">It's not okay, I'm going to lose my job!</div>
+        </div>
+
+        <div class="script-block" data-arou="20" data-valz="80">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(gentle)</div>
+            <div class="dialogue">You won't lose your job, it's cool.</div>
+        </div>
+
+        <div class="script-block" data-arou="20" data-valz="20">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(whimpering)</div>
+            <div class="dialogue">It's not cool.</div>
+        </div>
+
+        <div class="script-block" data-arou="40" data-valz="75">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(convincing)</div>
+            <div class="dialogue">It's edgy.</div>
+        </div>
+
+        <div class="script-block" data-arou="100" data-valz="0">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(aggressive)</div>
+            <div class="dialogue">Fuck off!</div>
+        </div>
+
+        <div class="script-block" data-arou="30" data-valz="85">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(insisting)</div>
+            <div class="dialogue">No, it's chic.</div>
+        </div>
+
+        <div class="script-block" data-arou="75" data-valz="10">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(devastated)</div>
+            <div class="dialogue">It's unsalvageable.</div>
+        </div>
+
+        <div class="script-block" data-arou="60" data-valz="100">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(dead serious)</div>
+            <div class="dialogue">Claire... it's French.</div>
+        </div>
+
+        <div class="script-block" data-arou="10" data-valz="60">
+            <div class="character">CLAIRE</div>
+            <div class="parenthetical">(sniffing, hopeful)</div>
+            <div class="dialogue">Really?</div>
+        </div>
+
+        <div class="script-block" data-arou="20" data-valz="50">
+            <div class="character">FLEABAG</div>
+            <div class="parenthetical">(looks ironically to camera)</div>
+            <div class="dialogue">Yes.</div>
+        </div>
+
+    </div>
+        </div>
+
+        <div class="video-link-container">
+            <a href="https://www.youtube.com/watch?v=4aCqLqlAuTo" target="_blank" class="video-btn">
+                ▶ „PENCIL“ SZENE ANSCHAUEN
+            </a>
+        </div>
+    </section>
+
+<section id="animation-section">
+    <div class="giant-glyph-container">
+        
+        <div class="background-extremes">
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 0, 'VALZ' 0;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 100, 'VALZ' 100;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 100, 'VALZ' 0;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 0, 'VALZ' 100;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 50, 'VALZ' 100;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 100, 'VALZ' 50;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 0, 'VALZ' 50;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 50, 'VALZ' 0;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 60, 'VALZ' 85;">n</span>
+            <span class="outline-glyph" style="font-variation-settings: 'AROU' 97, 'VALZ' 25;">n</span>
+        </div>
+
+        <span class="breathing-glyph">n</span>
+
+<div class="animation-status-box">
+    <button id="btn-pause-animation" class="pause-toggle-btn" title="ANIMATION PAUSIEREN">
+        ❚❚
+    </button>
+    
+    <span class="divider">|</span>
+
+    <span class="status-label">AROUSAL: <span id="live-arou">0</span></span>
+    <span class="divider">/</span>
+    <span class="status-label">VALENCE: <span id="live-valz">0</span></span>
+    
+    <span class="divider">|</span>
+    
+    <div id="word-ticker"></div>
+</div>
+        
+    </div>
+</section>
+
+<section id="gallery-section">
+    <div class="carousel">
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide current-slide"><img src="assets/img/1.png" alt="Bild 1"></li>
+                <li class="carousel-slide"><img src="assets/img/2.png" alt="Bild 2"></li>
+                <li class="carousel-slide"><img src="assets/img/3.png" alt="Bild 3"></li>
+                <li class="carousel-slide"><img src="assets/img/4.png" alt="Bild 4"></li>
+                <li class="carousel-slide"><img src="assets/img/5.png" alt="Bild 5"></li>
+                <li class="carousel-slide"><img src="assets/img/6.png" alt="Bild 6"></li>
+                <li class="carousel-slide"><img src="assets/img/7.png" alt="Bild 7"></li>
+                <li class="carousel-slide"><img src="assets/img/8.png" alt="Bild 8"></li>
+                <li class="carousel-slide"><img src="assets/img/9.png" alt="Bild 9"></li>
+            </ul>
+        </div>
+        
+<button class="carousel-btn btn-left">
+    <svg class="gallery-arrow" viewBox="0 0 102.43 189.85">
+        <polyline points="7.5 7.5 94.93 94.93 7.5 182.35"/>
+    </svg>
+</button>
+
+<button class="carousel-btn btn-right">
+    <svg class="gallery-arrow" viewBox="0 0 102.43 189.85">
+        <polyline points="7.5 7.5 94.93 94.93 7.5 182.35"/>
+    </svg>
+</button>
+
+        <div class="carousel-nav">
+            <button class="carousel-indicator current-slide"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+        </div>
+    </div>
+</section>
+
+
+
+   <section id="instances-section">
+        <div class="section-label-bar">
+            <span class="label-text">Emotionale Zustände (12)</span>
+            <span class="label-text">Klicken zum Neutralisieren</span>
+        </div>
+        
+        <div class="instances-grid">
+            <div class="instance-card active" data-arou="100" data-valz="0">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Panik</button>
+                    <span class="coords">100/0</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 100, 'VALZ' 0;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="90" data-valz="24">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Wut</button>
+                    <span class="coords">90/24</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 90, 'VALZ' 24;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="90" data-valz="50">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Aufregung</button>
+                    <span class="coords">90/50</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 90, 'VALZ' 50;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="100" data-valz="100">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Ekstase</button>
+                    <span class="coords">100/100</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 100, 'VALZ' 100;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="74" data-valz="23">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Druck</button>
+                    <span class="coords">74/23</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 74, 'VALZ' 23;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="50" data-valz="50">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Neutral</button>
+                    <span class="coords">50/50</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="60" data-valz="75">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Fokus</button>
+                    <span class="coords">60/75</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 60, 'VALZ' 75;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="50" data-valz="100">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Zufriedenheit</button>
+                    <span class="coords">50/100</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 50, 'VALZ' 100;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="0" data-valz="0">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Leere</button>
+                    <span class="coords">0/0</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 0, 'VALZ' 0;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="10" data-valz="36">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Müdigkeit</button>
+                    <span class="coords">10/36</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 10, 'VALZ' 36;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="0" data-valz="60">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Ruhe</button>
+                    <span class="coords">0/60</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 0, 'VALZ' 60;">Aa</div>
+            </div>
+
+            <div class="instance-card active" data-arou="0" data-valz="100">
+                <div class="instance-meta">
+                    <button class="reveal-btn">Entspannung</button>
+                    <span class="coords">0/100</span>
+                </div>
+                <div class="instance-preview" style="font-variation-settings: 'AROU' 0, 'VALZ' 100;">Aa</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="glyphs-section">
+
+        <div class="glyph-grid">
+            <div>A</div><div>Ä</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div><div>H</div><div>I</div>
+            <div>J</div><div>K</div><div>L</div><div>M</div><div>N</div><div>O</div><div>Ö</div><div>P</div><div>Q</div><div>R</div>
+            <div>S</div><div>T</div><div>U</div><div>Ü</div><div>V</div><div>W</div><div>X</div><div>Y</div><div>Z</div>
+
+            <div>a</div><div>ä</div><div>b</div><div>c</div><div>d</div><div>e</div><div>f</div><div>g</div><div>h</div><div>i</div>
+            <div>j</div><div>k</div><div>l</div><div>m</div><div>n</div><div>o</div><div>ö</div><div>p</div><div>q</div><div>r</div>
+            <div>s</div><div>ß</div><div>t</div><div>u</div><div>ü</div><div>v</div><div>w</div><div>x</div><div>y</div><div>z</div>
+
+            <div>0</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+    
+            <div>.</div><div>,</div><div>:</div><div>;</div><div>…</div>
+            <div>!</div><div>?</div><div>*</div><div>#</div><div>/</div>
+
+            <div>-</div><div>–</div><div>—</div><div>_</div>
+
+            <div>(</div><div>)</div>
+
+            <div>‚</div><div>„</div><div>“</div><div>”</div><div>‘</div><div>’</div>
+
+            <div>@</div><div>&</div><div>€</div><div>+</div><div>=</div><div>%</div>
+        </div>
+    </section>
+<section id="read-more-trigger">
+           <div class="section-label-bar">
+            <span class="label-text">THEORETISCHER HINTERGRUND</span>
+        </div>
+
+ <div class="trigger-center">
+        <button id="btn-toggle-info" class="read-more-btn">
+            MEHR LESEN
+        </button>
+    </div>
+</section>
+
+<div id="hidden-theory-container" class="theory-wrapper">
+        
+    <section id="info-section" class="layout-section">
+        <div class="layout-grid">
+            <div class="layout-left">
+                <h2>emotional form</h2>
+            </div>
+            <div class="layout-right">
+                <p>
+                    Mein Ziel ist es nicht die Schrift als solches zu hinterfragen und eine alternative zu finden, sondern der Schrift eine unterstützende Ebene hinzuzufügen. Ich möchte ein theoretisches und gestalterisches Konzept entwickeln, dass die Schrift um eine visuelle Ebene ergänzt, die nonverbale Aspekte von gesprochener Sprache integriert. Dabei soll untersucht werden, welche ästhetischen und semantischen Möglichkeiten es gibt ohne auf Kosten von Lesbarkeit/Effizienz zu gehen.
+                    Zentrale Idee: ist die Überlegung, geschriebene Sprache durch die Visualisierung von nonverbalen Elementen wie Mimik, Gestik und Betonung zu erweitern.
+                </p>
+                <p>
+                    dieses projekt erforscht, wie wir emotionen lesen. circumplexe nutzt die technik der opentype variable fonts, um das zweidimensionale spektrum menschlicher affekte abzubilden. die x-achse steuert die valenz (negativ bis positiv), die y-achse die erregung (ruhig bis aufgeregt). durch die interpolation entstehen unendliche zwischenstufen, die den text nicht nur lesbar, sondern fühlbar machen.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="legibility-section" class="layout-section">
+        <div class="layout-grid">
+            <div class="layout-left">
+                <h2>Warum nur die untere Hälfte?</h2>
+            </div>
+            <div class="layout-right">
+                <p>Wir lesen Wörter nicht Buchstabe für Buchstabe, sondern erkennen sie als Formen in unserem mentalen Lexikon. Studien der Lesbarkeitsforschung zeigen dabei ein spannendes Phänomen: Unser Gehirn benötigt primär die obere Hälfte eines Wortes, um es zu entziffern. Die untere Hälfte ist für das Verständnis zweitrangig. <br>
+                <span class="insert-word">Circumplex</span> macht sich dieses Prinzip zunutze: Die obere Hälfte bleibt stabil und neutral – sie sichert die Lesbarkeit (Information). Die untere Hälfte dient als Bühne für typografische Modifikationen, die in ihrer Intensität nicht eingeschränkt sind. Sie verformt sich je nach Erregungszustand (Arousal) und Positiv-Negativ-Dimension (Valence). So löst die Schrift das Problem digitaler Chats: Sie bleibt lesbar wie ein gedruckter Text, transportiert aber gleichzeitig das Gefühl gesprochener Sprache.</p>
+                <div class="split-visual">
+                    <div class="word-wrapper">
+                        <div class="word-full" style="font-variation-settings: 'AROU' 50, 'VALZ' 50;">Jo macht Sinn.</div>
+                        <div class="word-mask" id="reading-mask"></div>
+                        <div class="waterline"></div>
+                    </div>
+                </div>
+                <div class="toggle-wrapper no-margin">
+                    <label>
+                        <input type="checkbox" class="irony-checkbox" id="cb-mask">
+                        <span class="custom-switch"></span>
+                        <span class="label-text">nur information zeigen</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+</body>
+</html>
