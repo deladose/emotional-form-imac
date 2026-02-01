@@ -1053,26 +1053,45 @@ section {
 }
 
 /* =========================================
-   CHAT SECTION (Technical / Wireframe Style)
+   CHAT SECTION STYLES
    ========================================= */
 
 .chat-window {
     width: 420px;
     background: white;
     border: 1px solid #000;
+
     margin: 40px auto;
     display: flex;
     flex-direction: column;
+    /* Optional: Schatten für etwas Tiefe */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .chat-top-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 12px 14px;
     border-bottom: 1px solid #000;
     font-size: 11px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #000; /* Oder Grün für "Online" */
+    border-radius: 50%;
+    display: inline-block;
 }
 
 .chat-feed {
@@ -1083,41 +1102,69 @@ section {
 }
 
 .chat-row {
-    max-width: 75%;
+    max-width: 80%; /* Etwas breiter als vorher, sieht oft besser aus */
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
+/* Ausrichtung: Gesendet (Rechts) */
 .chat-row.sent {
     align-self: flex-end;
-    text-align: right;
+    align-items: flex-end; /* Schiebt Inhalt nach rechts */
 }
 
+/* Ausrichtung: Empfangen (Links) */
 .chat-row.received {
     align-self: flex-start;
+    align-items: flex-start; /* Schiebt Inhalt nach links */
 }
 
+/* --- Metadaten (Name + Subtext) --- */
 .bubble-meta {
     font-size: 10px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     opacity: 0.6;
+    margin-bottom: 2px;
+    
+    /* WICHTIG: Damit Name oben und Subtext unten steht */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Textausrichtung für Metadaten */
+.chat-row.sent .bubble-meta {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.chat-row.received .bubble-meta {
+    text-align: left;
+    align-items: flex-start;
 }
 
 .subtext-label {
-    display: block;
     font-size: 9px;
-    opacity: 0.4;
+    opacity: 0.6; /* Etwas blasser als der Name */
 }
 
+/* --- Die Bubble --- */
 .chat-bubble {
+    width: fit-content; /* Passt Breite an Text an */
     border: 1px solid #000;
-    padding: 10px 12px;
+    padding: 10px 14px;
     font-size: 20px;
     line-height: 1.35;
     background: #fff;
+    
+    /* Umbruch-Sicherheit */
+    word-wrap: break-word;
+    word-break: break-word;
 }
+
+
 
 /* =========================================
    11. SCREENPLAY SECTION (Marriage Story Style)
