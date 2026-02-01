@@ -16,16 +16,13 @@ html, body {
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     text-rendering: geometricPrecision !important; 
-
 }
+
 body {
     margin: 0;
     background-color: #ffffff; 
     font-family: 'circumplex', sans-serif;
     color: #000000;
-
-    
-    
 }
 
 h2 {
@@ -35,7 +32,6 @@ h2 {
     font-size: 14px;
     margin: 0;
 }
-
 
 section {
     position: relative;
@@ -108,18 +104,18 @@ section {
 }
 
 /* =========================================
-   FIXED NAVIGATION (Downloads)
+   FIXED NAVIGATION
    ========================================= */
 
 .fixed-nav {
     position: fixed;
     top: 30px;
     right: 30px;
-    z-index: 1000; /* Immer ganz oben drauf */
+    z-index: 1000;
     display: flex;
-    flex-direction: column; /* Untereinander sieht technischer aus */
+    flex-direction: column;
     gap: 10px;
-    align-items: flex-end; /* Rechtsbündig */
+    align-items: flex-end;
 }
 
 .nav-btn {
@@ -132,7 +128,7 @@ section {
     background: #fff;
     border: 1px solid #000;
     padding: 8px 12px;
-    border-radius: 20px; /* Pill Shape */
+    border-radius: 20px;
     transition: all 0.2s ease;
     box-shadow: 3px 4px 5px rgba(0,0,0,0.1);
 }
@@ -162,11 +158,11 @@ section {
     outline: none;
     cursor: default;
     font-variation-settings: 'AROU' 50, 'VALZ' 50;
-    width: auto;          /* Darf wachsen */
-    padding: 0 0.2em;     /* Puffer links und rechts (relativ zur Schriftgröße) */
+    width: auto;
+    padding: 0 0.2em;
     margin-top:-260px;
-    overflow: visible;    /* Darf über den Rand ragen */
-    white-space: nowrap;  /* Kein Umbruch */
+    overflow: visible;
+    white-space: nowrap;
 }
 
 .hero-toggle {
@@ -182,7 +178,7 @@ section {
     padding: 0;
     background-color: white; 
     border-top: 1px solid rgb(0, 0, 0);
-     border-bottom: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
     margin-bottom: 0px;
 }
 
@@ -202,11 +198,12 @@ section {
 .toolbar-group {
     display: flex; align-items: center; gap: 30px;
 }
+
 .toolbar-group.right {
     position: absolute;
-    right: 40px; /* Gleicher Abstand wie das Padding der Toolbar */
+    right: 40px;
     top: 50%;
-    transform: translateY(-50%); /* Exakt vertikal mittig */
+    transform: translateY(-50%);
 }
 
 .slider-box {
@@ -250,7 +247,6 @@ section {
     transition: transform 0.1s;
 }
 
-/* Firefox Support */
 .slider-box input[type=range]::-moz-range-track {
     width: 100%; height: 2px; background: #000;
 }
@@ -266,6 +262,7 @@ section {
 .text-size-controls {
     display: flex; align-items: center; gap: 15px; position: relative; z-index: 20;
 }
+
 .text-size-controls button {
     width: 24px; height: 24px;
     border-radius: 50%; 
@@ -279,7 +276,6 @@ section {
 
 .text-size-controls button:hover { 
     background: #000; color: #fff; 
-
 }
 
 #size-display { 
@@ -304,14 +300,12 @@ section {
     overflow: hidden;
 }
 
-
 .layout-section {
     width: 100%;
     background-color: transparent; 
     padding: 20px 25px; 
     box-sizing: border-box;
-
-        border-top: 0px solid black;
+    border-top: 1px solid black;
 }
 
 .layout-grid {
@@ -340,12 +334,9 @@ section {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: normal;
-
     margin: 0;
     max-width: 680px; 
 }
-
-
 
 @media (max-width: 800px) {
     .layout-grid {
@@ -405,42 +396,36 @@ section {
 }
 
 /* =========================================
-   SEKTION 3: GALLERY (7 Images + Style Update)
+   SEKTION 3: GALLERY
    ========================================= */
 
 #gallery-section {
     position: relative;
-    height: 100vh;           /* Volle Bildschirmhöhe */
+    height: 100vh;
     width: 100%;
-    overflow: hidden;        /* Nichts darf überstehen */
+    overflow: hidden;
     background-color: #ffffff;
-    border-top: 1px solid #000; /* Konsistenter Trennstrich unten */
+    border-top: 1px solid #000;
 }
-
-/* --- CAROUSEL ARROWS --- */
 
 .carousel-btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%); /* Exakt vertikal mittig */
-    z-index: 20; /* Über den Bildern */
-    
+    transform: translateY(-50%);
+    z-index: 20;
     background: #fff;
     border: 1px solid #000;
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Kreisform */
-    
-    font-family: 'circumplex', sans-serif; /* Oder System-Font für Pfeile */
+    border-radius: 50%;
+    font-family: 'circumplex', sans-serif;
     font-size: 24px;
     line-height: 1;
-    padding-bottom: 4px; /* Optische Korrektur für die Pfeil-Höhe */
-    
+    padding-bottom: 4px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     box-shadow: 0px 0px 0 rgba(0,0,0,0.1);
     transition: all 0.2s ease;
 }
@@ -450,51 +435,41 @@ section {
     color: #fff;
     box-shadow: 0px 0px 0 rgba(0,0,0,0.2);
 }
-/* --- GALLERY SVG ARROWS --- */
 
-/* Basis-Styling für das SVG */
 .gallery-arrow {
-    width: 8px;            /* Größe des Pfeils */
-    height: auto;           /* Höhe passt sich automatisch an */
-    fill: none;             /* Keine Füllung (nur Linie) */
-    stroke: currentColor;   /* Nimmt die Textfarbe an (Schwarz/Weiß) */
-    stroke-width: 25px;     /* Deine Strichstärke */
-    stroke-linecap: round;  /* Abgerundete Enden */
-    stroke-linejoin: round; /* Abgerundete Ecken */
+    width: 8px;
+    height: auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
     display: block;
 }
 
-/* Linker Pfeil: Einfach umdrehen */
 .btn-left .gallery-arrow {
     transform: rotate(180deg);
 }
 
-/* Optional: Pfeil im Button optisch zentrieren */
-/* Da Pfeile oft optisch nicht mittig wirken, schieben wir sie minimal */
 .btn-right .gallery-arrow {
     margin-left: 3px;
     margin-top: 3px;
 }
+
 .btn-left .gallery-arrow {
     margin-right: 3px;
-        margin-top: 3px;
+    margin-top: 3px;
 }
 
-.btn-left {
-    left: 20px;
-}
+.btn-left { left: 20px; }
+.btn-right { right: 20px; }
 
-.btn-right {
-    right: 20px;
-}
-
-/* Mobile Anpassung: Pfeile etwas kleiner oder weiter am Rand */
 @media (max-width: 768px) {
     .btn-left { left: 10px; }
     .btn-right { right: 10px; }
     .carousel-btn { width: 32px; height: 32px; font-size: 20px; }
 }
-/* Der Container für die Rutsche */
+
 .carousel {
     position: relative;
     height: 100%;
@@ -502,24 +477,21 @@ section {
     margin: 0 auto;
 }
 
-/* Der Bereich, in dem sich die Bilder bewegen */
 .carousel-track-container {
     height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-/* Die eigentliche Bahn (wird per JS verschoben) */
 .carousel-track {
     padding: 0;
     margin: 0;
     list-style: none;
     position: relative;
     height: 100%;
-    transition: transform 700ms ease-in-out; /* Weiche Fahrt */
+    transition: transform 700ms ease-in-out;
 }
 
-/* Einzelnes Bild-Element */
 .carousel-slide {
     position: absolute;
     top: 0;
@@ -527,72 +499,60 @@ section {
     width: 100%;
 }
 
-/* Das Bild selbst */
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Füllt den Schirm (schneidet Ränder ggf. ab) */
-    /* Falls du das ganze Bild sehen willst, nimm: object-fit: contain; */
+    object-fit: cover;
     display: block;
 }
-
-/* --- NAVIGATION DOTS (Neues Styling) --- */
 
 .carousel-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Abstand zwischen den Punkten */
-    
+    gap: 15px;
     position: absolute;
-    bottom: 40px; /* Abstand vom unteren Rand */
+    bottom: 40px;
     width: 100%;
     z-index: 10;
 }
 
 .carousel-indicator {
-    /* 1. Reset des Buttons */
     border: 0;
     padding: 0;
     cursor: pointer;
-    
-    /* 2. Größe & Form */
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    
-    /* 3. Style (Inaktiv: Weiß mit schwarzem Rand) */
     background: #fff;
     border: 1px solid #000;
-    
-    /* 4. Der typische Schatten (wie bei den anderen Buttons) */
     box-shadow: 0px 0px 0px rgba(0,0,0,0.1);
-    
     transition: all 0.2s ease;
 }
 
-/* Hover Effekt */
 .carousel-indicator:hover {
-    background: #000;      /* Wird schwarz */
+    background: #000;
     border-color: #000;
     box-shadow: 2px 3px 4px rgba(0,0,0,0.2);
 }
 
-/* Aktiver Zustand (Das aktuelle Bild) */
 .carousel-indicator.current-slide {
-    background: #000;      /* Schwarz gefüllt */
+    background: #000;
     border-color: #000;
-    transform: scale(1.1); /* Leicht größer */
+    transform: scale(1.1);
     box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
 }
-/* --- SEKTION 4: CIRCUMPLEX MAP (Opaque / Deckend) --- */
+
+/* =========================================
+   SEKTION 4: CIRCUMPLEX MAP
+   ========================================= */
+
 #circumplex-tester-section {
     padding-top: 30px;
     padding-bottom: 30px;
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     overflow: hidden;
-    /* WEISS: Verdeckt das SVG Overlay */
     background-color: #ffffff;
     border-bottom: 1px solid black;
 }
@@ -617,7 +577,6 @@ section {
 .label-left { top: 50%; left: 0; transform: translate(-50%, -50%); }
 .label-right { top: 50%; right: 0; transform: translate(50%, -50%); }
 
-
 .point-top    { top: 5%; left: 50%; }
 .point-bottom { top: 95%; left: 50%; }
 .point-left   { top: 50%; left: 8.5%; }
@@ -629,9 +588,7 @@ section {
     white-space: nowrap; transition: color 0.2s;
 }
 
-
 #glyphs-section {
-    /* Reihenfolge: Oben | Rechts | Unten | Links */
     padding: 200px 20px 200px 20px; 
     height: auto; 
     min-height: 50vh;
@@ -657,50 +614,35 @@ section {
 }
 
 .glyph-grid div { 
-    /* Cursor bleibt normal */
     cursor: default; 
-    
-    /* WICHTIG: Sehr schnelle Transition für den Magnet-Effekt */
     transition: font-variation-settings 0.1s linear; 
-    
-    /* Start-Zustand: Ruhig */
     font-variation-settings: 'AROU' 0, 'VALZ' 50;
 }
 
-
-    #cursor-tracker {
-    /* ... deine existierenden Regeln ... */
-    
-    /* 1. Schrift schärfer und dünner machen */
+#cursor-tracker {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-    /* 2. Sicherstellen, dass keine "fette" Stärke vererbt wird */
     font-weight: 400; 
     white-space: nowrap;
-    /* 3. Hardware-Beschleunigung aktivieren (macht Bewegung flüssiger & oft schärfer) */
     transform: translate(15px, 15px) translateZ(0); 
-    
-    /* Optional: Wenn der Rahmen immer noch zu dick wirkt, 
-       kannst du die Farbe minimal heller machen (optischer Trick): */
-    /* border: 1px solid #1a1a1a; */ 
-
     position: fixed; top: 0; left: 0;
     background-color: white;
     border: 1px solid #000;
     border-radius: 40px;
     padding: 8px 16px 7px 19px; font-family: 'circumplex', sans-serif; font-size: 12px;
     pointer-events: none; z-index: 100; display: none;
-        box-shadow: 4px 5px 6px rgba(0,0,0,0.1);; transform: translate(15px, 15px);
+    box-shadow: 4px 5px 6px rgba(0,0,0,0.1); transform: translate(15px, 15px);
 }
 
 .toggle-wrapper {
     display: inline-block; margin: 0px; position: relative; z-index: 50;
 }
+
 .toggle-wrapper label {
     display: flex; align-items: center; gap: 10px; cursor: pointer;
-    margin-top: -110px;
+    margin-top: -106px;
 }
+
 .irony-checkbox { display: none; }
 .custom-switch {
     display: block;
@@ -710,20 +652,20 @@ section {
     border-radius: 50%;
     background: #fff;
 }
+
 .irony-checkbox:checked + .custom-switch { background: #000; }
+
 .label-text {
     font-family: 'circumplex';
     font-size: 12px;
     letter-spacing: 1px;
-    text-transform: uppercase; }
-
-
+    text-transform: uppercase; 
+}
 
 /* =========================================
-   MAP POINTS (Double Click Concept)
+   MAP POINTS
    ========================================= */
 
-/* 1. Die Wackel-Animation (Keyframes) */
 @keyframes drag-hint-wiggle {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     15% { transform: translate(-55%, -50%) rotate(-3deg); }
@@ -734,42 +676,29 @@ section {
     100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
 
-/* 2. Der Basis-Punkt (OHNE Animation!) */
 .type-point {
     position: absolute;
     transform: translate(-50%, -50%);
     z-index: 5;
-    
-    /* Unsichtbarer Rahmen für bessere Greifbarkeit */
     padding: 15px 25px;
     border-radius: 50px; 
-    
     border: 1px solid transparent;
     background-color: transparent;
-    
     cursor: grab;
-    
-    /* Transition für Hover-Effekte */
     transition: all 0.2s ease;
 }
 
-/* 3. Die Trigger-Klasse (Das fügt JS hinzu, wenn man hinscrollt) */
 .type-point.animate-now {
-    /* Hier wird die Animation aktiviert: 1.5sek lang, 1 Mal */
     animation: drag-hint-wiggle 2.0s ease-in-out forwards;
 }
 
-/* --- ZUSTAND: HOVER --- */
 .type-point:hover {
     border-color: #ccc;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 50;
-    
-    /* Wichtig: Animation stoppen, wenn man drüberhovert */
     animation: none; 
 }
 
-/* --- ZUSTAND: DRAGGING --- */
 .type-point.is-dragging {
     border-color: #000;
     cursor: grabbing;
@@ -779,7 +708,6 @@ section {
     animation: none; 
 }
 
-/* --- ZUSTAND: EDITING --- */
 .type-point.is-editing {
     border-color: transparent; 
     cursor: text;
@@ -788,25 +716,18 @@ section {
     animation: none; 
 }
 
-/* --- DER TEXT SELBST --- */
 .type-point .font-preview {
     outline: none;
     font-size: 60px;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
-    
-    /* TRICK: Im Normalzustand reagiert der Text nicht auf die Maus.
-       Der Klick geht "durch" auf den Container .type-point zum Schieben. */
     pointer-events: none;
 }
 
-/* Wenn wir im Edit-Modus sind, muss der Text reagieren */
 .type-point.is-editing .font-preview {
     pointer-events: auto;
 }
-
-
 
 .split-demo-container {
     display: grid;
@@ -828,13 +749,9 @@ section {
     width: 100%; 
     display: flex;
     align-items: center;
-    justify-content: left;
-    display: flex;
-    align-items: center;
     justify-content: flex-start; 
     background-color: transparent; 
     margin-top: -60px;
-
 }
 
 .word-wrapper {
@@ -891,7 +808,6 @@ section {
     padding-bottom: 0px;
 }
 
-
 .giant-glyph-container {
     width: 100%;
     height: auto;
@@ -910,12 +826,9 @@ section {
     width: auto;
     padding: 0 0.5em;
     opacity: 1; 
-    
-    /* ÄNDERUNG 1: 'linear' statt 'ease-in-out' für konstantes Tempo */
     animation: breathe-morph 20s infinite alternate linear;
 }
 
-/* NEU: Klasse zum Einfrieren der CSS Animation */
 .breathing-glyph.paused {
     animation-play-state: paused !important;
 }
@@ -930,8 +843,8 @@ section {
 
 .outline-glyph {
     position: absolute;
-        margin-top: -350px;
-            margin-bottom: -150px;
+    margin-top: -350px;
+    margin-bottom: -150px;
     font-family: 'circumplex', sans-serif;
     line-height: 1;
     font-size: 160vh;
@@ -951,10 +864,9 @@ section {
     100% { font-variation-settings: 'AROU' 0, 'VALZ' 0; }
 }
 
-/* Update für die Status-Box */
 .animation-status-box {
     position: absolute;
-    margin-bottom: 35px;
+    margin-bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
@@ -963,16 +875,15 @@ section {
     border: 1px solid #000;
     border-radius: 20px;
     padding: 9px 10px 8px 18px;
-    font-family: 'circumplex', sans-serif; /* Wichtig: Dein Font! */
+    font-family: 'circumplex', sans-serif;
     display: flex;
     gap: 15px;
     align-items: center;
     font-size: 12px;
-    min-width: max-content; /* Etwas breiter für den Button */
+    min-width: max-content;
     justify-content: center;
 }
 
-/* Der neue Pause Button */
 .pause-toggle-btn {
     background: transparent;
     border: none;
@@ -994,13 +905,10 @@ section {
     transform: scale(1.2);
 }
 
-/* Wenn pausiert, wird der Button rot oder ändert das Icon (via JS) */
 .animation-paused .pause-toggle-btn {
     color: #ff0000; 
 }
 
-
-/* Ticker Container */
 #word-ticker {
     position: relative;
     width: 90px; 
@@ -1011,41 +919,29 @@ section {
     vertical-align: middle;
 }
 
-/* Ticker Item (Optimiert) */
 .ticker-item {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    
     font-weight: bold;
     text-transform: uppercase;
-    
-    /* Hardware Beschleunigung */
     will-change: transform, opacity;
-    
-    /* Extrem schnelle Transition */
-    transition: transform 0.1s cubic-bezier(0.215, 0.610, 0.355, 1.000), 
-                opacity 0.1s ease-out;
+    transition: transform 0.1s cubic-bezier(0.215, 0.610, 0.355, 1.000), opacity 0.1s ease-out;
 }
 
-/* Zustände */
 .ticker-item.enter { transform: translateY(100%); opacity: 0; }
 .ticker-item.active { transform: translateY(0); opacity: 1; }
 .ticker-item.exit { transform: translateY(-100%); opacity: 0; }
-
 
 .status-label {
     color: #000;
     font-weight: bold;
 }
 
-.divider {
-    color: #ccc; /* Leicht ausgegraut */
-}
+.divider { color: #ccc; }
 
-/* Zahlenbreite fixieren, damit es nicht wackelt */
 #live-arou, #live-valz {
     display: inline-block;
     min-width: 30px;
@@ -1053,45 +949,26 @@ section {
 }
 
 /* =========================================
-   CHAT SECTION STYLES
+   CHAT SECTION
    ========================================= */
 
 .chat-window {
     width: 420px;
     background: white;
     border: 1px solid #000;
-
     margin: 40px auto;
     display: flex;
     flex-direction: column;
-    /* Optional: Schatten für etwas Tiefe */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .chat-top-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 12px 14px;
     border-bottom: 1px solid #000;
     font-size: 11px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-}
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: bold;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #000; /* Oder Grün für "Online" */
-    border-radius: 50%;
-    display: inline-block;
 }
 
 .chat-feed {
@@ -1102,83 +979,54 @@ section {
 }
 
 .chat-row {
-    max-width: 80%; /* Etwas breiter als vorher, sieht oft besser aus */
+    max-width: 75%;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-/* Ausrichtung: Gesendet (Rechts) */
 .chat-row.sent {
     align-self: flex-end;
-    align-items: flex-end; /* Schiebt Inhalt nach rechts */
+    text-align: right;
 }
 
-/* Ausrichtung: Empfangen (Links) */
 .chat-row.received {
     align-self: flex-start;
-    align-items: flex-start; /* Schiebt Inhalt nach links */
 }
 
-/* --- Metadaten (Name + Subtext) --- */
 .bubble-meta {
     font-size: 10px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     opacity: 0.6;
-    margin-bottom: 2px;
-    
-    /* WICHTIG: Damit Name oben und Subtext unten steht */
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-/* Textausrichtung für Metadaten */
-.chat-row.sent .bubble-meta {
-    text-align: right;
-    align-items: flex-end;
-}
-
-.chat-row.received .bubble-meta {
-    text-align: left;
-    align-items: flex-start;
 }
 
 .subtext-label {
+    display: block;
     font-size: 9px;
-    opacity: 0.6; /* Etwas blasser als der Name */
+    opacity: 0.4;
 }
 
-/* --- Die Bubble --- */
 .chat-bubble {
-    width: fit-content; /* Passt Breite an Text an */
     border: 1px solid #000;
-    padding: 10px 14px;
+    padding: 10px 12px;
     font-size: 20px;
     line-height: 1.35;
     background: #fff;
-    
-    /* Umbruch-Sicherheit */
-    word-wrap: break-word;
-    word-break: break-word;
 }
 
-
-
 /* =========================================
-   11. SCREENPLAY SECTION (Marriage Story Style)
+   11. SCREENPLAY SECTION
    ========================================= */
 
 #screenplay-section {
-    background-color: transparent; /* Hintergrund grau (Tisch) */
-    padding: 0 0 100px 0;      /* Padding unten für Luft */
+    background-color: transparent;
+    padding: 0 0 100px 0;
     border-top: 1px solid #000;
 }
 
-/* Header Bar Anpassung für diesen Bereich */
 #screenplay-section .section-label-bar {
-    margin-bottom: 60px;       /* Abstand zum Papier */
+    margin-bottom: 60px;
     background: #f4f4f4; 
     border-bottom: 1px solid #000;
     padding: 10px 20px;
@@ -1186,23 +1034,18 @@ section {
     justify-content: space-between;
 }
 
-/* Das "Papier" */
 .script-page {
     background-color: #fff; 
     max-width: 700px;       
-    margin: 0 auto;         /* Mittig */
+    margin: 0 auto;
     padding: 80px 60px;  
     border: 1px solid black;   
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     color: #000;
 }
 
-/* --- TEXT ELEMENTE --- */
-
-/* Szenenkopf */
 .slugline {
     font-weight: bold;
     text-transform: uppercase;
@@ -1213,7 +1056,6 @@ section {
     text-align: left;
 }
 
-/* Handlung */
 .action-line {
     margin-bottom: 40px;
     line-height: 1.5;
@@ -1225,29 +1067,26 @@ section {
     margin-right: auto;
 }
 
-/* --- DER INTERAKTIVE BLOCK --- */
 .script-block {
     margin-bottom: 40px;
     width: 100%;            
     display: flex;
     flex-direction: column;
-    align-items: center;    /* Alles zentrieren */
+    align-items: center;
     cursor: default;
     transition: transform 0.2s;
 }
 
 .script-block:hover {
-    transform: scale(1.02); /* Leichter Zoom Effekt */
+    transform: scale(1.02);
 }
 
-/* Hover-Status für Meta-Infos */
 .script-block:hover .character,
 .script-block:hover .parenthetical {
     color: #000;
     font-weight: bold;
 }
 
-/* Charakter Name */
 .character {
     margin: 0 0 5px 0;
     text-transform: uppercase;
@@ -1255,7 +1094,6 @@ section {
     font-weight: bold;
 }
 
-/* Regieanweisung */
 .parenthetical {
     margin: 0 0 10px 0;
     font-size: 14px;
@@ -1263,7 +1101,6 @@ section {
     transition: color 0.2s;
 }
 
-/* Dialog (Deine Variable Font) */
 .dialogue {
     font-family: 'circumplex', sans-serif;
     margin: 0;
@@ -1272,19 +1109,15 @@ section {
     text-align: center;
     font-size: 32px;
     line-height: 1.2;
-    
-    /* Start: Neutral */
     font-variation-settings: 'AROU' 50, 'VALZ' 50;
     transition: font-variation-settings 0.4s ease;
 }
 
-/* --- VIDEO BUTTON --- */
 .video-link-container {
-    text-align: center;    /* Button mittig platzieren */
-    margin-top: 60px;      /* Abstand zum Papier nach oben */
-    width: 100%;           /* Container nimmt volle Breite ein */
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
 }
-
 
 .video-btn {
     text-decoration: none;
@@ -1296,32 +1129,20 @@ section {
     background: #fff;
     border: 1px solid #000;
     padding: 10px 12px;
-    border-radius: 20px; /* Pill Shape */
+    border-radius: 20px;
     transition: all 0.2s ease;
-
 }
-
 
 .video-btn:hover {
     background: #000;
     color: #fff;
-
-
 }
 
-
-
-
-
-/* Responsive Anpassung */
 @media (max-width: 600px) {
     .script-page { padding: 40px 20px; }
     .dialogue { font-size: 24px; }
 }
-/* --- AUDIO SYNC STYLING --- */
 
-/* Der Play Button */
-/* Der Play Button - Base Style */
 .audio-btn {
     text-decoration: none;
     font-family: 'circumplex';
@@ -1332,66 +1153,47 @@ section {
     background: #fff;
     border: 1px solid #000;
     padding: 8px 12px;
-    border-radius: 20px; /* Pill Shape */
+    border-radius: 20px;
     transition: all 0.2s ease;
-
 }
 
-/* Hover Effekt (Pop Up) */
 .audio-btn:hover {
     background: #000;
     color: #fff;
 }
 
-/* Zustand: Audio läuft (Rot) */
-/* Wir behalten den Pop-Effekt bei, aber machen ihn rot */
 .audio-btn.playing {
     background: #ff0000; 
     color: #fff;
-
-    /* Auch im Playing-Status leicht angehoben lassen */
     transform: translate(-2px, -2px);
-
 }
 
-
-/* Der Container, der oben kleben bleibt */
 .audio-controls-floating {
-    position: sticky;       /* Das Zauberwort */
-    top: 30px;              /* Bleibt 30px vom oberen Rand entfernt kleben */
-    z-index: 1000;           /* Muss über dem Text liegen */
-    
+    position: sticky;
+    top: 30px;
+    z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert den Button */
-    margin-bottom: 40px;     /* Abstand zum Papier darunter */
-    
-    /* WICHTIG: Damit der unsichtbare Container nicht Klicks auf den Text blockiert */
+    justify-content: center;
+    margin-bottom: 40px;
     pointer-events: none; 
 }
 
-/* Wir müssen sicherstellen, dass der Button selbst klickbar bleibt */
-/* (Weil wir oben pointer-events: none gesetzt haben) */
 .audio-controls-floating .audio-btn {
     pointer-events: auto;
 }
 
-/* --- FOCUS MODE (Karaoke Effekt) --- */
-
-/* Wenn Audio läuft: Alles leicht ausblenden */
 .script-page.focus-mode .script-block {
-    opacity: 0.2; /* Sehr blass */
-    filter: blur(1px); /* Leicht unscharf */
+    opacity: 0.2;
+    filter: blur(1px);
     transition: opacity 0.5s, filter 0.5s;
 }
 
-/* ABER: Die aktive Zeile voll sichtbar machen */
 .script-page.focus-mode .script-block.is-active {
     opacity: 1;
     filter: blur(0);
-    transform: scale(1.02); /* Leichter Pop-Effekt */
+    transform: scale(1.02);
 }
 
-/* Die aktive Schrift wird schwarz (falls sie grau war) */
 .script-block.is-active .dialogue {
     color: #000;
 }
@@ -1403,9 +1205,10 @@ section {
     margin-left: 5px; 
 }
 
+/* =========================================
+   INSTANCES 12-GRID
+   ========================================= */
 
-
-/* --- INSTANCES 12-GRID --- */
 #instances-section {
     border-top: 1px solid #000;
     background: #fff;
@@ -1421,7 +1224,6 @@ section {
 
 .instances-grid {
     display: grid;
-    /* 4 Spalten auf Desktop */
     grid-template-columns: repeat(4, 1fr); 
 }
 
@@ -1434,10 +1236,7 @@ section {
     position: relative;
 }
 
-/* Rand-Korrektur */
-.instance-card:nth-child(4n) {
-    border-right: none;
-}
+.instance-card:nth-child(4n) { border-right: none; }
 
 .instance-meta {
     padding: 15px;
@@ -1447,7 +1246,6 @@ section {
     border-bottom: 1px solid #000;
 }
 
-/* Button Design */
 .reveal-btn {
     background: #fff; 
     color: #000;
@@ -1459,24 +1257,8 @@ section {
     text-transform: uppercase;
     transition: all 0.2s ease;
     font-family: 'circumplex', sans-serif;
-    
 }
 
-/* Hover Effekt */
-.reveal-btn:hover {
-    background: #fff; 
-    color: #000;
-}
-
-/* WENN AKTIV (Karte ist aufgedeckt) */
-/* Der Button bleibt schwarz und "oben" stehen */
-.instance-card.active .reveal-btn {
-    background: #000;
-    color: #fff;
-}
-
-/* Wenn Aktiv (Standard-Zustand beim Laden) */
-/* Button ist SCHWARZ -> Sieht "an" aus */
 .instance-card.active .reveal-btn {
     background: #000;
     color: #fff;
@@ -1494,17 +1276,15 @@ section {
     justify-content: center;
     font-size: 100px;
     font-family: 'circumplex', sans-serif;
-    
-    /* Wichtig für die Animation */
     transition: font-variation-settings 0.5s ease;
 }
 
-/* Responsive */
 @media (max-width: 1000px) {
     .instances-grid { grid-template-columns: repeat(2, 1fr); }
     .instance-card:nth-child(4n) { border-right: 1px solid #000; }
     .instance-card:nth-child(2n) { border-right: none; }
 }
+
 @media (max-width: 600px) {
     .instances-grid { grid-template-columns: 1fr; }
     .instance-card { border-right: none; }
@@ -1515,11 +1295,12 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     gap: 20px;
 }
+
 .mag-char {
     font-size: 40px;
     text-align: center;
     cursor: default;
-    transition: font-variation-settings 0.2s ease-out; /* Weiche Rückkehr */
+    transition: font-variation-settings 0.2s ease-out;
 }
 
 /* =========================================
@@ -1538,10 +1319,6 @@ section {
     margin-bottom: 80px;
 }
 
-
-
-
-/* Der Button Style (wie deine anderen Buttons) */
 .read-more-btn {
     text-decoration: none;
     font-family: 'circumplex';
@@ -1552,7 +1329,7 @@ section {
     background: #fff;
     border: 1px solid #000;
     padding: 8px 12px;
-    border-radius: 20px; /* Pill Shape */
+    border-radius: 20px;
     transition: all 0.2s ease;
     box-shadow: 0px 0px 0 rgba(0,0,0,0.1);
 }
@@ -1563,29 +1340,22 @@ section {
     box-shadow: 0px 0px 0 rgba(0,0,0,0.15);
 }
 
-/* Der Wrapper, der versteckt ist */
 .theory-wrapper {
-    /* Start: Versteckt */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    
-    /* Animation */
     transition: max-height 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.8s ease;
-    
-    border-top: 1px solid transparent; /* Platzhalter */
+    border-top: 1px solid transparent;
 }
 
-/* Der "Offen" Zustand */
 .theory-wrapper.open {
-    /* Ein Wert, der sicher größer ist als der Inhalt (z.B. 3000px) */
     max-height: 4000px; 
     opacity: 1;
     border-top: 1px solid #000;
 }
 
 .close-trigger-area {
-    padding: 60px 0 100px 0; /* Viel Platz unten */
+    padding: 60px 0 100px 0;
     display: flex;
     justify-content: center;
     background: #fff;
